@@ -1,0 +1,150 @@
+@import '/css/mixins.less';
+
+main{
+	
+}
+
+
+
+section{
+	width: 95%;
+	min-height: 80vh;
+
+	overflow-x: hidden;
+
+	margin: 2.5%;
+	padding: 2em;
+
+	border-radius: 15px;
+}
+
+#columns{
+
+	background: rgba(250,250,250,0.4);
+
+
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	flex-flow: row;
+	-webkit-flex-flow: row;
+
+	& > div:first-child{
+		border-style: none;
+		max-width: 20%;
+	}
+
+	& > div:last-child{
+		border-style: none;
+	}
+
+	& > div{
+		max-width: 40%;
+		min-height: 100%;
+		border-right-style: solid;
+		border-right-color: white;	
+		border-left-style: solid;
+		border-left-color: white;
+		padding: 2em;
+
+		& > div{
+			display: flex;
+			display: -webkit-flex;
+			flex-flow: column;
+			-webkit-flex-flow :column;
+			flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+				
+		}
+	}
+}
+
+p > span{
+	color: white;
+	font-size: 20px;
+	font-weight: 20px;
+}
+
+.estado{
+	svg{
+		width: 100%;
+		fill: #ccc;
+		stroke: white;
+	}
+}
+
+.diputados{
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+
+	display: -webkit-flex;
+	-webkit-flex-flow: row;
+	-webkit-flex-wrap: wrap;
+
+	& > div{
+		width: 50%;
+
+		& > p{
+			font-weight: 18px;
+			& > span{
+				font-weight: 12px;
+			}
+		}
+	}
+}
+
+.candidato-cad{
+	display: flex;
+	display: -webkit-flex;
+
+	flex-flow: row;
+	-webkit-flex-flow: row;
+
+	margin-top: 1em;
+
+	transition: all ease-in-out 0.3s;
+	-webkit-transition: all ease-in-out 0.3s;
+
+	border-radius: 15px;
+
+	&:hover{
+		background:rgba( 0, 0, 0, 0.3);
+		cursor:pointer;
+	}
+
+	& > div{
+		&:first-child{
+
+			max-width:20%;
+
+			img{
+				max-height: 100px;
+				border-radius: 50%;
+			}
+		}
+		&{
+			position: relative;
+			width: 80%;
+			height: 100%;
+			align-content: center;
+			-webkit-align-content: center;
+			
+			p{
+				color:black;
+				font-size: 24px;
+				line-height: 0.8;
+
+				& > span{
+					color: white;
+					font-size: 22px;
+				}
+			}
+		}
+	}
+}
+
+.model{
+	.mixin-model();
+}

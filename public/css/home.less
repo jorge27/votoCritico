@@ -1,0 +1,77 @@
+#carousel{
+	width: 100%;
+	height: 100vh;
+}
+
+#mapa{
+	width: 96%;
+	min-height: 80vh;
+	/*background-color: rgba(255,255,255,0.8);*/
+	color: white;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+	padding: 1em;
+	margin: 2em;
+	border-radius: 2em;
+	display: flex;
+	flex-flow: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+
+	#estados{
+		display: flex;
+		flex-wrap: wrap;
+		/*justify-content: flex-end;*/
+
+		display: -webkit-flex;
+		-webkit-flex-wrap: wrap;
+		/*-webkit-justify-content: flex-end;*/
+
+		position: relative;
+		top: 30%;
+		left: 75%;
+
+		font-size: 32px;
+		
+	}
+
+	h3{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+
+		display: -webkit-flex;
+		-webkit-flex-wrap: wrap;
+		-webkit-justify-content: flex-start;
+
+		color: #FFA500;
+	}
+
+
+	#map{
+		max-height: 70vh;
+
+		.land{
+			fill: #cecece;
+			transition: all 0.25s ease-in-out;
+
+			&:hover{
+				fill : #cecece;
+				stroke: black;
+				stroke-width: 5px; 
+			}
+		}
+	}
+	
+}
+
+#contacto{
+	display: flex;
+	flex-wrap: wrap;
+
+	width: 100%;
+	height: 85vh;
+
+
+}

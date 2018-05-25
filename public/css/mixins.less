@@ -1,0 +1,66 @@
+.mixin-model(...){
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 990;
+
+	background: rgba(0,0,0,0.6);
+
+	display: none;
+	
+	flex-wrap: wrap;
+	flex-flow: column;
+	justify-content: center;
+
+	-webkit-flex-wrap: wrap;
+	-webkit-flex-flow: column;
+	-webkit-justify-content: center;
+	
+	-ms-flex-wrap: wrap;
+	-ms-flex-flow: column;
+	-ms-justify-content: center;
+
+	-o-flex-wrap: wrap;
+	-o-flex-flow: column;
+	-o-justify-content: center;
+
+	transition: all ease-in-out 0.5s;
+	-webkit-transition: all ease-in-out 0.5s;
+	-ms-transition: all ease-in-out 0.5s;
+
+	&.active{
+		display: flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: -o-flex;
+	}
+
+	& > div{
+		margin-bottom: 0px;
+		padding: 30px;
+		width: 70%;
+		background: whitesmoke;
+	}
+
+	&.model-header{
+		&.model-title{
+			align-items: center;
+			-webkit-align-items: center;
+		}
+		& > a.model-close{
+			position: relative;
+			right: 0px;
+			top: 0px;
+		}
+	}
+
+	&.model-content{
+
+	}
+
+	&.model-footer{
+
+	}
+}
