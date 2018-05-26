@@ -18,6 +18,7 @@ class Propuestas extends Migration
             $table->integer('id_candidato');
             $table->string('tipo_propuesta');
             $table->longText('propuesta');
+            $table->tinyInteger('active')->default(1);
         });
     }
 

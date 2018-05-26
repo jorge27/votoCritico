@@ -67,7 +67,7 @@
 						</div>
 						<div>
 							<p>
-								{{ $gobernador->nombre }}<br>
+								{{ $gobernador->nombre_candidato }}<br>
 								<span>@foreach(json_decode($gobernador->partido) as $partido) {{ $partido }} @endforeach</span>
 							</p> 
 						</div>
@@ -88,7 +88,7 @@
 						</div>
 						<div>
 							<p>
-								{{ $diputados_camaraBaja[($i*2)+$j]->nombre }}<br>
+								{{ $diputados_camaraBaja[($i*2)+$j]->nombre_candidato }}<br>
 								<span>@foreach($partidos as $partido) {{ $partido }} @endforeach</span>
 							</p>
 						</div>
@@ -109,7 +109,7 @@
 						</div>
 						<div>
 							<p>
-								{{ $diputados_locales[($i*2)+$j]->nombre }}<br>
+								{{ $diputados_locales[($i*2)+$j]->nombre_candidato }}<br>
 								<span>@foreach($partidos as $partido) {{ $partido }} @endforeach</span>
 							</p>
 						</div>
@@ -121,7 +121,7 @@
 		</section>	
 		<section>
 			@foreach($municipios as $municipio)
-				<p><span><a href="/municipio/{{ $municipio->short_name }}">{{ $municipio->nombre }}</a></span></p>
+				<p><span><a href="/municipio/{{ $municipio->short_name }}">{{ $municipio->nombre_municipio }}</a></span></p>
 			@endforeach
 		</section>
 	</main>
@@ -132,7 +132,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<div class="modal-title">
-						{{ $gobernador->nombre }}
+						{{ $gobernador->nombre_candidato }}
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
         			 	<span aria-hidden="true">&times;</span>
@@ -181,7 +181,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<div class="modal-title">
-						{{ $gobernador->nombre }}
+						{{ $gobernador->nombre_candidato }}
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
         			 	<span aria-hidden="true">&times;</span>
@@ -229,7 +229,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<div class="modal-title">
-						{{ $gobernador->nombre }}
+						{{ $gobernador->nombre_candidato }}
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
         			 	<span aria-hidden="true">&times;</span>

@@ -16,7 +16,7 @@ class Candidatos extends Migration
         Schema::defaultStringLength(191);
         Schema::create('candidato', function(Blueprint $table){
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('nombre_candidato');
             $table->text('partido');
 
             $table->integer('tipo_candidatura'); /*Example: presidencia, gobernatura, alcaldia, senaduria, diputados_locales, diputados_camara_baja*/
@@ -27,6 +27,7 @@ class Candidatos extends Migration
             $table->integer('id_estado')->nullable();
             $table->integer('id_estado_municipio')->nullable();
             $table->text('telefono');
+            $table->tinyInteger('active')->default(1);
             $table->timestamps();
         });
     }

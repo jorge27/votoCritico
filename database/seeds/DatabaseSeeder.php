@@ -16,17 +16,17 @@ class DatabaseSeeder extends Seeder
     	$faker = Faker::create();
 
     	DB::table('users')->insert([
-       		"nombre" => "admin",
+       		"name" => "admin",
        		"email" => "admin@admin.com",
-       		"passwd" => password_hash('secret',PASSWORD_BCRYPT),
+       		"password" => password_hash('secret',PASSWORD_BCRYPT),
        		"user_permission" => 1,
         ]);
 
         for ($i=0; $i < 50; $i++) { 
         	DB::table('users')->insert([
-        		"nombre" => $faker->name,
+        		"name" => $faker->name,
         		"email" => $faker->safeEmail,
-        		"passwd" => password_hash('secret',PASSWORD_BCRYPT),
+        		"password" => password_hash('secret',PASSWORD_BCRYPT),
         		"user_permission" => rand(1,5),
         	]);
         }
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             while (($data = fgetcsv($handle, 1000, ","))){
                 DB::table('municipio')->insert([
                     'id_imco' => $data[1],
-                    'nombre' => $data[2],
+                    'nombre_municipio' => $data[2],
                     'short_name' => preg_replace('/[^A-Za-z0-9_]/', '',$data[2].$data[1]),
                 ]);
             }
@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
         if ($stream = fopen($file_municipio ,'r')) {
             while (($datos = fgetcsv($stream, 1000, ","))){
                 DB::table('estado')->insert([
-                    'nombre' => $datos[1],
+                    'nombre_estado' => $datos[1],
                     'short_name' => $datos[2]
                 ]);
             }
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
             }
             for ($j=0; $j < 32; $j++) { 
                 DB::table('candidato')->insert([
-                    "nombre" => $faker->name,
+                    "nombre_candidato" => $faker->name,
                     "partido" => $partido,
                     "tipo_candidatura" => 2,
                     "email" => $faker->userName.$faker->lastName.$faker->domainWord.'@'.$faker->domainName,
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
 
                 for ($k=0; $k < 4 ; $k++) { 
                     DB::table('candidato')->insert([
-                        "nombre" => $faker->name,
+                        "nombre_candidato" => $faker->name,
                         "partido" => $partido,
                         "tipo_candidatura" => 3,
 
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
 
                 for ($k=0; $k < 4 ; $k++) { 
                     DB::table('candidato')->insert([
-                        "nombre" => $faker->name,
+                        "nombre_candidato" => $faker->name,
                         "partido" => $partido,
                         "tipo_candidatura" => 4,
 
@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
 
             for ($k=0; $k < 2457 ; $k++) { 
                 DB::table('candidato')->insert([
-                    "nombre" => $faker->name,
+                    "nombre_candidato" => $faker->name,
                     "partido" => $partido,
                     "tipo_candidatura" => 5,
                     "email" => $faker->userName.$faker->lastName.$faker->domainWord.'@'.$faker->domainName,
@@ -137,7 +137,7 @@ class DatabaseSeeder extends Seeder
 
         }
 
-        for ($i=0; $i < count(DB::table('candidato')->where(1)->get()) ; $i++) { 
+        for ($i=0; $i < count(DB::table('candidato')->select('*')->get()) ; $i++) { 
             DB::table('propuestas')->insert([
                     "id_candidato" => $i,
                     "tipo_propuesta" => 'educacion',

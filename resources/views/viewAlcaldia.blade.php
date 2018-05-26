@@ -15,6 +15,9 @@
 				@foreach($candidatos as $candidato)
 					id=>{{ $candidato->id }}<br>
 					@foreach(json_decode($candidato) as $candy=>$val)
+						@if(!strcmp($candy,"partido"))
+						{{ $candy }}=> @foreach(json_decode($val) as $part){{ $part }}@endforeach<br>
+						@endif 
 						{{ $candy }}=>{{ $val }}<br> 
 					@endforeach
 					<hr>

@@ -29,7 +29,7 @@ class AlcaldiaController extends Controller
     function show($id){
     	$municipio = Municipios::where('short_name','=', $id)->leftJoin('estado_municipio', 'estado_municipio.municipio' ,'=', 'municipio.id')->get();
 
-    	if (!isset($municipio[0]->nombre)) {
+    	if (!isset($municipio[0]->nombre_municipio)) {
     		return abort(404);
     	}
 

@@ -13,7 +13,7 @@ class Users extends Migration
      */
     public function up()
     {
-        Schema::defaultStringLength(191);
+        /*Schema::defaultStringLength(191);
         Schema::create('users', function (Blueprint $table){
             $table->increments('id');
             $table->string('nombre');
@@ -22,7 +22,7 @@ class Users extends Migration
             $table->integer('user_permission');
             $table->rememberToken();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -32,6 +32,6 @@ class Users extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        //Schema::drop('users');
     }
 }

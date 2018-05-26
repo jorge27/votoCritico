@@ -16,7 +16,7 @@ class Estado extends Migration
         Schema::defaultStringLength(191);
         Schema::create('estado',function (Blueprint $table){
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('nombre_estado');
             $table->string('short_name')->unique();
         });
     }
