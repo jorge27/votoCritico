@@ -45,10 +45,24 @@ class WebServiceUsuariosController extends BaseController
 		DB::table('users')->insert([
 			'name' => $dump['name'],
 			'email' => $email,
-			'password' => password_hash($dump['email'], PASSWORD_BCRYPT),
+			'password' => password_hash($dump['email'], PASSWORD_DEFAULT),
 			'user_permision' => 5,
 		]);
 
 		return 0;
 	}
+
+	public function edit($id){
+
+	}
+
+	public function update(Request $request,$id){
+
+	}
+
+	public function destroy($id){
+		
+	}
+
+
 }
